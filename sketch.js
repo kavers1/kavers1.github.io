@@ -147,8 +147,8 @@ function generateGCode() {
     tileW = 900 / tilesX;
     tileH = 900 / tilesY;
 
-    const scaleX = 3200 / 100 / 900;
-    const scaleY = 800 / 100 / (900 / 4);
+    const scaleX = 145 / 900; //3200 / 100 / 900;
+    const scaleY = 45 / (900 / 4); //800 / 100 / (900 / 4);
     const maskYStart = ((900 - (900 / 4)) / 2) + posH;
     const maskYEnd = maskYStart + (900 / 4);
 
