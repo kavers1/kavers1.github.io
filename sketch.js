@@ -246,7 +246,14 @@ function generateGCode() {
     gcode.push("G1 X0 Y0 F1500; got back to origin");
     gcode.push("M30 ; Program stop");
 
-    saveGCodeFile(gcode.join("\n"), "output.gcode");
+    let name = document.getElementById("sketchname").value;
+    if ( name.length > 0 ){
+           saveGCodeFile(gcode.join("\n"), name + ".ngc");
+    }
+    else
+    {
+        saveGCodeFile(gcode.join("\n"), "output.ngc");
+    }
 }
 
 function saveGCodeFile(content, filename) {
