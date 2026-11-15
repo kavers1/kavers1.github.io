@@ -1,0 +1,113 @@
+{ "layout" :
+     [
+        {"name":"center","type":"MountPoint","xc":8.87,"yc":6.61,"fixed":true},
+        {"name":"LR0", "type":"LineRail","x1":2.22,"y1":10.21,"x2":0.51,"y2":0.6 },
+        {"name":"LR1", "type":"LineRail","x1":3.1 ,"y1":10.23,"x2":3.1 ,"y2":0.5 },
+        {"name":"LR2", "type":"LineRail","x1":8.74,"y1":2.41 ,"x2":9.87,"y2":0.47},
+        {"name":"AR3", "type":"ArcRail", "xc":8.87,"yc":6.61,"rad":6.54,"beg":-68,"end":-5 },
+        {"name":"AR4", "type":"ArcRail", "xc":8.91,"yc":3.91,"rad":7.79,"beg":-25,"end":15 },
+        {"name":"LR5", "type":"LineRail","x1":12.79,"y1":3.81,"x2":14.63,"y2":2.50},
+        {"name":"LR6", "type":"LineRail","x1":4.14,"y1":8.12,"x2":2.26,"y2":8.72},
+        {"name":"LR7", "type":"LineRail","x1":5.56,"y1":2.91,"x2":3.22,"y2":0.30},
+        {"name":"LR8", "type":"LineRail","x1":10.89,"y1":2.08,"x2":12.01,"y2":-0.42},
+        {"name":"LR9", "type":"LineRail","x1":13.83,"y1":6.61,"x2":16.83,"y2":6.61},
+        {"name":"LR10","type":"LineRail","x1":10.89,"y1":11.13,"x2":12.33,"y2":14.35}
+    ],
+"setups": [
+[
+    {"comment": "setup 0"},
+    {"name":"Turntable","type":"gear","teeth":150,"action":"mount","on":"center","phase":0},
+    {"name":"Crank","type":"gear","teeth":72,"action":"mount","on":"LR10","phase":0},
+    {"name":"Slide","type":"MountPoint","action":"mount","on":"LR1","r":0,"phase":0},
+    {"name":"Anchor","type":"MountPoint","action":"mount","on":"Crank","r":3.3838},
+    {"name":"CRod1","type":"CRod","Anchor":"Anchor","Slide":"Slide"},
+    {"name":"penMP","type":"MountPoint","action":"mount","on":"CRod1","r":10.625},
+    {"name":"Pen","type":"Pen","action":"mount","on":"penMP","r":3.375,"a":-55}
+],
+[
+    {"comment": "setup 1"},
+    {"name":"gTurntable","type":"gear","teeth":120,"action":"mount","on":"center","phase":0},
+    {"name":"gCrank","type":"gear","teeth":94,"action":"mount","on":"LR1","phase":0},
+    {"name":"gAnchor","type":"gear","teeth":90,"action":"mount","on":"LR10","phase":0},
+    {"name":"gFulCrum","type":"gear","teeth":34,"action":"mount","on":"LR0","phase":0},
+    {"name":"SP","type":"MountPoint","action":"mount","on":"gFulCrum","r":1.5},
+    {"name":"AP","type":"MountPoint","action":"mount","on":"gAnchor","r":4.4798},
+    {"name":"CRod1","type":"CRod","Anchor":"AP","Slide":"SP"},
+    {"name":"EX","type":"MountPoint","action":"mount","on":"CRod1","r":10},
+    {"name":"Pen","type":"Pen","action":"mount","on":"EX","r":4.5,"a":90}
+],
+[
+    {"comment": "setup 2"},
+    {"name":"gTurntable","type":"gear","teeth":150,"action":"mount","on":"center","phase":0},
+    {"name":"gCrank","type":"gear","teeth":50,"action":"mount","on":"LR9","phase":0,"options":{"cont":false}},
+    {"name":"gAnchorTable","type":"gear","teeth":100,"action":"mount","on":"LR4","phase":0},
+    {"name":"gAnchorHub","type":"gear","teeth":34,"action":"stack","on":"gAnchorTable","phase":0,"options":{"cont":false,"isfixed":true}},
+    {"name":"orbit","type":"gear","teeth":40,"action":"mount","on":"gAnchorTable","phase":0,"options":{"ismoving":true}},
+    {"name":"SP","type":"MountPoint","action":"mount","on":"LR1","r":0.8973},
+    {"name":"AP","type":"MountPoint","action":"mount","on":"orbit","r":1.5},
+    {"name":"CRod1","type":"CRod","Anchor":"AP","Slide":"SP"},
+    {"name":"EX","type":"MountPoint","action":"mount","on":"CRod1","r":12},
+    {"name":"Pen","type":"Pen","action":"mount","on":"EX","r":7.5,"a":-90}
+],
+[
+    {"comment": "setup 3"},
+    {"name":"gTurntable","type":"gear","teeth":144,"action":"mount","on":"center","phase":0},
+    {"name":"gA","type":"gear","teeth":100,"action":"mount","on":"LR10","phase":0},
+    {"name":"gBr","type":"gear","teeth":72,"action":"mount","on":"LR7","phase":0},
+    {"name":"SP","type":"MountPoint","action":"mount","on":"gA","r":4},
+    {"name":"AP","type":"MountPoint","action":"mount","on":"gB","r":4},
+    {"name":"CRod1","type":"CRod","Anchor":"AP","Slide":"SP"},
+    {"name":"SP2","type":"MountPoint","action":"mount","on":"LR1","r":0.8},
+    {"name":"AP2","type":"MountPoint","action":"mount","on":"CRod1","r":2},
+    {"name":"CRod2","type":"CRod","Anchor":"AP2","Slide":"SP2"},
+    {"name":"EX","type":"MountPoint","action":"mount","on":"CRod1","r":8.625},
+    {"name":"Pen","type":"Pen","action":"mount","on":"EX","r":4.75,"a":-65}
+],
+[
+    {"comment": "setup 4"},
+    {"name":"gTurntable","type":"gear","teeth":150,"action":"mount","on":"center","phase":0},
+    {"name":"gA","type":"gear","teeth":98,"action":"mount","on":"LR10","phase":0,"ratio":0.5},
+    {"name":"gB","type":"gear","teeth":100,"action":"mount","on":"LR7","phase":0,"ratio":0.5},
+    {"name":"SP","type":"MountPoint","action":"mount","on":"LR1","r":0.7},
+    {"name":"AP","type":"MountPoint","action":"mount","on":"gB","r":2},
+    {"name":"CRod1","type":"CRod","Anchor":"AP","Slide":"SP"},
+    {"name":"SP2","type":"MountPoint","action":"mount","on":"gA","r":4},
+    {"name":"AP2","type":"MountPoint","action":"mount","on":"CRod1","r":8},
+    {"name":"CRod2","type":"CRod","Anchor":"AP2","Slide":"SP2"},
+    {"name":"EX","type":"MountPoint","action":"mount","on":"CRod1","r":9},
+    {"name":"Pen","type":"Pen","action":"mount","on":"EX","r":4.5,"a":-90}
+],
+[
+    {"comment": "setup 5"},
+    {"name":"gTurntable","type":"gear","teeth":150,"action":"mount","on":"center","phase":0},
+    {"name":"gA","type":"gear","teeth":100,"action":"mount","on":"LR10","phase":0,"ratio":0.5},
+    {"name":"gB","type":"gear","teeth":74,"action":"mount","on":"LR7","phase":0,"ratio":0.5},
+    {"name":"SP","type":"MountPoint","action":"mount","on":"LR1","r":0.7},
+    {"name":"AP","type":"MountPoint","action":"mount","on":"gB","r":3.3838},
+    {"name":"CRod1","type":"CRod","Anchor":"AP","Slide":"SP"},
+    {"name":"SP2","type":"MountPoint","action":"mount","on":"gA","r":4},
+    {"name":"AP2","type":"MountPoint","action":"mount","on":"LR1","r":0.21},
+    {"name":"CRod2","type":"CRod","Anchor":"AP2","Slide":"SP2"},
+    {"name":"SP3","type":"MountPoint","action":"mount","on":"CRod3","r":12.75},
+    {"name":"AP3","type":"MountPoint","action":"mount","on":"CRod1","r":5.5},
+    {"name":"CRod3","type":"CRod","Anchor":"AP3","Slide":"SP3"},
+    {"name":"EX","type":"MountPoint","action":"mount","on":"CRod3","r":5.25},
+    {"name":"Pen","type":"Pen","action":"mount","on":"EX","r":3.125,"a":-65}
+],
+[
+    {"comment": "setup 6"},
+    {"name":"gTurntable","type":"gear","teeth":150,"action":"mount","on":"center","phase":0},
+    {"name":"gCrank","type":"gear","teeth":50,"action":"mount","on":"LR1","phase":0},
+    {"name":"gB","type":"gear","teeth":100,"action":"mount","on":"LR10","phase":0},
+    {"name":"gFulCrum","type":"gear","teeth":34,"action":"mount","on":"LR0","phase":0},
+    {"name":"gFulCrum","type":"gear","teeth":40,"action":"mount","on":"LR0","phase":0},
+    {"name":"gFulCrum","type":"gear","teeth":50,"action":"mount","on":"LR0","phase":0},
+    {"name":"gFulCrum","type":"gear","teeth":50,"action":"mount","on":"LR0","phase":0},
+    {"name":"SP","type":"MountPoint","action":"mount","on":"gFulCrum","r":1.5},
+    {"name":"AP","type":"MountPoint","action":"mount","on":"gAnchor","r":4.4798},
+    {"name":"CRod1","type":"CRod","Anchor":"AP","Slide":"SP"},
+    {"name":"EX","type":"MountPoint","action":"mount","on":"CRod1","r":10},
+    {"name":"Pen","type":"Pen","action":"mount","on":"EX","r":4.5,"a":90}
+]
+]
+}

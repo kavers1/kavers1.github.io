@@ -1,0 +1,175 @@
+
+body, html {
+    margin: 0;
+    --reliable-black: #000000;
+    --lawful-gray: #636466;
+    --shy-gray: #c7c8ca;
+    --snow-white: #ffffff;
+    --deep-green: #00a173;
+    --burning-orange :#ea5827;
+    max-height: 100vh;
+    overflow: hidden;
+
+}
+
+* {
+    box-sizing: border-box;
+    color: var(--reliable-black);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    padding-top: 10px;
+    margin-top: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+p {
+    padding: 10px;
+}
+
+body {
+    width: 100vw;
+    overflow: hidden
+}
+
+
+/* center pane */
+#artboard {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    z-index: -1000;
+    align-items: center;
+    justify-content: center;
+    background: var(--snow-white);
+    height: 100vh;
+    margin: auto;
+}
+
+#canvasWrapper {
+    width: 100vw;      /* Full width for better visualization */
+    height: 100vh;     /* Maximize space while keeping proportions */
+    position: relative;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    border: 3px dashed var(--snow-white); /*Visual indication for full canvas */
+    overflow: hidden;
+}
+
+#aspectMask {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    right: 25%;
+    width: 50%;
+    height: calc(100% / 4); /* 4:1 aspect ratio */
+    transform: translate(0, -50%);
+    border: 3px dashed var(--burning-orange);  /* Strong visual indication */
+    /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); */
+    pointer-events: none;  /* Prevent interaction with the mask */
+}
+
+/* left panel */
+#ui {
+    position: absolute;
+    width: 15%;
+    top:10px;
+    bottom:10px;
+    left:10px;
+    border: black 2px solid;
+
+    background-color: var(--snow-white);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    #controls {
+        display: flex;
+        margin-bottom: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+#thumbnails {
+    background-color: var(--snow-white);
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    right: 10px;
+    width: 15%;
+    overflow: scroll;
+    border: black 2px solid;
+}
+
+#controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+select {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#export-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button {
+    max-height: 100%;
+    width: 90%;
+    padding: 15px;
+    margin: 0px auto; /* <- Add missing semicolon */
+    margin-bottom: 5px;
+    border: black 2px solid;
+    position: relative;
+}
+
+input [type='checkbox'] {
+
+}
+
+input[type=text] {
+    width: 90%;
+    height: 30px;
+    margin: 10px auto;
+    border: black 2px solid;
+}
+
+
+details {
+    border-top: 3px solid var(--lawful-gray);
+    padding:10px;
+    cursor: pointer;
+    transition: none;
+
+    p {
+        margin: 0;
+        padding:10px 0;
+
+    }
+}
+
+details div:first-child {
+    padding-top: 10px;
+}
+
+details summary {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+
